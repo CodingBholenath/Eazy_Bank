@@ -1,0 +1,48 @@
+services:
+  accounts:
+    image: "shrutipuri1301/accounts:s4"
+    container_name: accounts-ms
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - shrutipuri1301
+
+  loans:
+    image: "shrutipuri1301/loans:s4"
+    container_name: loans-ms
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+    networks:
+      - shrutipuri1301
+
+
+  cards:
+    image: "shrutipuri1301/cards:s4"
+    container_name: cards-ms
+    ports:
+      - "9001:9001"
+
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+    networks:
+      - shrutipuri1301
+
+networks:
+   shrutipuri1301:
+     driver: "bridge"
+
+
+
+
