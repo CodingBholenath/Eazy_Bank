@@ -1,0 +1,57 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: "loans"
+  profiles:
+    active: "prod"
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password: ''
+#  h2:
+#    console:
+#      enabled: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3308/loansdb
+    username: root
+    password: root
+    enabled: true
+  sql:
+    init:
+      mode: always
+
+    jpa:
+      show-sql: true
+
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+
+   #we need to enable the actuator endpoints that will
+   #allow the refreshing the properties at runtime
+management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+#rabbitmq:
+#  host: "localhost"
+#  port: 5672
+#  username: "guest"
+#  password: "guest"
+
+#loans:
+#  message: "Welcome to EazyBank Loans related API'S"
+#  contactDetails:
+#    name: "Amaal Grega -Developer"
+#    email: "amaal@eazyBank.com"
+#  onCallSupport:
+#    -(452)456-2176
+#    -(546)764-8934
