@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+build:
+  version: "1.0"
+
+cards:
+  message: "Welcome to EazyBank cards related prod API'S"
+  contactDetails:
+    name: "Sandra Harper-Product Owner"
+    email: "sandra@eazyBank.com"
+  onCallSupport:
+    -(697)432-2345
+    -(987)567-6789
