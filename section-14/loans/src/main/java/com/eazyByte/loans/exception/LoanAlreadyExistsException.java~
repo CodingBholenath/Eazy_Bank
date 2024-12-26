@@ -1,4 +1,0 @@
-package com.eazyByte.loans.exception;
-
-public class LoanAlreadyExistsException {
-}

@@ -1,4 +1,0 @@
-package com.eazyBank.accounts.service.client;
-
-public class CardsFallback {
-}
